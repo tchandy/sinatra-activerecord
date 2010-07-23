@@ -4,10 +4,8 @@ require 'fileutils'
 namespace :db do
   desc "migrate your database"
   task :migrate do
-    ActiveRecord::Migrator.migrate(
-      'db/migrate', 
-      ENV["VERSION"] ? ENV["VERSION"].to_i : nil
-    )
+    ActiveRecord::Base.logger = Logger.new($stdout)
+    ActiveRecord::Migrator.migrate("db/migrate/", ENV["VERSION"] ? ENV["VERSION"].to_i : nil)
   end
 
   desc "create an ActiveRecord migration in ./db/migrate"
