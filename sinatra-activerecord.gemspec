@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   # = MANIFEST =
 
   s.extra_rdoc_files = %w[README.md]
-  s.add_dependency 'sinatra',    '>= 0.9.4'
+  #s.add_dependency 'sinatra',    '>= 0.9.4'
 
   s.has_rdoc = true
   s.homepage = "http://github.com/rtomayko/sinatra-activerecord"
